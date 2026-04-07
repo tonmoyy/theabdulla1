@@ -6,17 +6,18 @@ import { background, logoabdulla} from "../assets";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { useState } from "react";
+import Section from "@/components/Section.jsx";
 
 const navigation = [
     {
         id: "0",
         title: "Home",
-        url: "#features",
+        url: "#home",
     },
     {
         id: "1",
         title: "About",
-        url: "#pricing",
+        url: "#about",
     },
     {
         id: "2",
@@ -26,7 +27,7 @@ const navigation = [
     {
         id: "3",
         title: "Investments",
-        url: "#roadmap",
+        url: "#investments",
     },
     {
         id: "4",
@@ -37,7 +38,7 @@ const navigation = [
     {
         id: "5",
         title: 'Contact',
-        url: "#login",
+        url: "#contact",
     },
 ];
 
@@ -62,7 +63,7 @@ const Header = () => {
         setOpenNavigation(false);
     };
 
-    return (
+    return ( <Section id="home">
         <div className={`fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
             <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
                 <a className="block w-[12rem] xl:mr-8" href="#hero">
@@ -116,6 +117,7 @@ const Header = () => {
                 </Button>
             </div>
         </div>
+        </Section>
     );
 };
 

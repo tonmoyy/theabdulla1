@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const CorePillars = () => {
     return (
-        <Section id="how-to-use">
+        <Section id="corepillars">
             <div className="container">
                 <Heading title="Core Pillars"/>
                 <div className="relative">

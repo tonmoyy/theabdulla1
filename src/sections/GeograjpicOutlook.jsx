@@ -30,7 +30,7 @@ const geographicOutlook = [
 
 const Geographic = () => {
     return (
-        <Section id="features">
+        <Section id="geographic">
             <div className="container relative z-2">
                 <Heading className="md:max-w-md lg:max-w-2xl" title="GEOGRAPHIC OUTLOOK" />
 

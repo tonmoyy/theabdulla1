@@ -17,7 +17,7 @@ const about = [
 
 const About = () => {
     return (
-        <Section id="features">
+        <Section id="about">
             <div className="container relative z-2">
                 <Heading className="md:max-w-md lg:max-w-2xl" title="ABOUT THE PLATFORM
 " />
