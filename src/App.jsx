@@ -3,7 +3,7 @@ import Partnerships from "./sections/Partnerships.jsx";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import Pricing from "./sections/Pricing";
+import Pricing from "./sections/InvestmentPhilosophy.jsx";
 import Roadmap from "./sections/Roadmap";
 import CorePillars from "./sections/CorePillars.jsx";
 import { BrowserRouter } from 'react-router-dom';
