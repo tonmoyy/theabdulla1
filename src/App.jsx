@@ -8,6 +8,7 @@ import About from "./sections/About.jsx";
 import InvestmentPhilosophy from "./sections/InvestmentPhilosophy.jsx";
 import Geographic from "./sections/GeograjpicOutlook.jsx";
 import Contact from "@/sections/Contact.jsx";
+import Footerr from "./components/Footer";
 
 
 
@@ -24,7 +25,7 @@ const App = () => {
                    <InvestmentPhilosophy />
                    <Geographic />
                     <Contact/>
-                   <Footer />
+                   <Footerr />
                     </BrowserRouter>
             </div>
         </>

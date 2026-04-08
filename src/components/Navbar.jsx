@@ -55,7 +55,6 @@ const Header = () => {
             disablePageScroll();
         }
     };
-
     const handleClick = () => {
         if (!openNavigation) return;
 
@@ -70,15 +69,15 @@ const Header = () => {
                       <img src={logoabdulla} width={190} height={140}  className="rounded-full " alt="logoAbdulla" />
                 </a>
 
-                <nav className={`${openNavigation ? "flex" : "hidden"} fixed top-1 left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}>
+                <nav className={`${openNavigation ? "flex" : "hidden"}  left-0 right-0 bottom-0 bg-n-8 lg:flex lg:mx-auto lg:bg-transparent`}>
                     <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
                         {navigation.map((item) => (
                             <a
                                 key={item.id}
                                 href={item.url}
                                 onClick={handleClick}
-                                className={`block relative font-code text-2xl uppercase text-white transition-colors hover:text-color-1 ${item.onlyMobile ? "lg:hidden" : ""} px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                                    item.url === pathname.hash ? "z-2 lg:text-white" : "lg:text-white/50"
+                                className={`block relative font-code text-2xl uppercase text-white  transition-colors hover:text-color-1 ${item.onlyMobile ? "lg:border-hidden" : ""} px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-bold ${
+                                    item.url === pathname.hash ? "z-2 lg:text-gray-700" : "lg:text-shadow-blue-500"
                                 } lg:leading-5 lg:hover:text-white xl:px-12`}
                             >
                                 {item.title}
@@ -112,9 +111,9 @@ const Header = () => {
                 {/*    Sign in*/}
                 {/*</Button>*/}
 
-                <Button className="ml-auto lg:hidden" onClick={toggleNavigation}>
-                    <MenuSvg openNavigation={openNavigation} />
-                </Button>
+                {/*<Button className="ml-auto lg:hidden" onClick={toggleNavigation}>*/}
+                {/*    <MenuSvg openNavigation={openNavigation} />*/}
+                {/*</Button>*/}
             </div>
         </div>
         </Section>

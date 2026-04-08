@@ -65,6 +65,7 @@ export { default as twitter } from './socials/twitter.svg';
 
 // General Imports
 export { default as logoabdulla } from './logoabdulla.jpg';
+export {default as logoabdulla1} from './logoabdulla1.jpg'
 export { default as check } from './check.svg';
 export { default as check2 } from './check-02.svg';
 export { default as loading1 } from './loading-01.svg';
