@@ -6,9 +6,26 @@ import {
 import Button from "../components/Button";
 import Section from "../components/Section";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Notification from "../components/Notification";
 import PlusSvg from "../assets/svg/PlusSvg";
+import urban from "../assets/urban-skyline.jpeg"
+import urban1 from "../assets/urban-1.jpg"
+import Autoplay from "embla-carousel-autoplay"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import {Card, CardContent} from "@/components/ui/card.jsx";
+import {AspectRatio} from "@/components/ui/aspect-ratio.jsx";
+
+
+const image=[{id:1,title:urban},{id:2,title:urban1}];
+
 
 
 // const BackgroundCircles = ({ parallaxRef }) => {
@@ -68,17 +85,16 @@ import PlusSvg from "../assets/svg/PlusSvg";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
+  const plugin = React.useRef(
+      Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
 
   return (
     <Section
-      className="pt-[12rem] -mt-[5.25rem]"
-      crosses
-      crossesOffset="lg:translate-y-[5.25rem]"
-      customPaddings
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+        <div className="relative z-2 max-w-[62rem] mx-auto text-center ">
           <h1 className="h1 mb-6">
             Building Long-Term Value Through Strategic Capital &nbsp; with {` `}
             <span className="inline-block relative">
@@ -97,67 +113,88 @@ const Hero = () => {
             investment stewardship, strategic advisory, and equity partnerships.
           </p>
         </div>
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-            <div className="relative bg-n-8 rounded-[1rem]">
-              <div className="h-[1.4rem] bg-[#43435C] rounded-t-[0.9rem]" />
+        <Carousel className="w-auto h-auto  " plugins={[plugin.current]} onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}>
+          <CarouselContent>
+            {image.map((item) => (
+                <CarouselItem key={item.id} >
+                  <div className="p-0">
+                    <Card>
+                      <CardContent className="flex items-center justify-center">
+                      <span className="text-4xl font-semibold ">
+                       <div >
+                           <img src={item.title} className="rounded-md object-cover" />
+                       </div>
+                      </span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+        {/*<div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">*/}
+        {/*  <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">*/}
+        {/*    <div className="relative bg-n-8 rounded-[1rem]">*/}
+        {/*      <div className="h-[1.4rem] bg-[#43435C] rounded-t-[0.9rem]" />*/}
 
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
-                  src={robot}
-                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
-                  width={1024}
-                  height={490}
-                  alt=""
-                />
+        {/*      /!*<div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">*!/*/}
+        {/*      /!*  <img*!/*/}
+        {/*      /!*    src={robot}*!/*/}
+        {/*      /!*    className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"*!/*/}
+        {/*      /!*    width={1024}*!/*/}
+        {/*      /!*    height={490}*!/*/}
+        {/*      /!*    alt=""*!/*/}
+        {/*      /!*  />*!/*/}
 
-                {/*<ScrollParallax isAbsolutelyPositioned>*/}
-                {/*  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-[#474060]/40 backdrop-blur border border-white/10 rounded-2xl xl:flex">*/}
-                {/*    <li className="p-5">*/}
-                {/*      <img src={homeSmile} width={24} height={25} alt="" />*/}
-                {/*    </li>*/}
-                {/*    <li className="p-5">*/}
-                {/*      <img src={file02} width={24} height={25} alt="" />*/}
-                {/*    </li>*/}
-                {/*    <li className="p-5">*/}
-                {/*      <img src={searchMd} width={24} height={25} alt="" />*/}
-                {/*    </li>*/}
-                {/*    <li className="p-5">*/}
-                {/*      <img src={plusSquare} width={24} height={25} alt="" />*/}
-                {/*    </li>*/}
-                {/*  </ul>*/}
-                {/*</ScrollParallax>*/}
+        {/*      /!*  /!*<ScrollParallax isAbsolutelyPositioned>*!/*!/*/}
+        {/*      /!*  /!*  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-[#474060]/40 backdrop-blur border border-white/10 rounded-2xl xl:flex">*!/*!/*/}
+        {/*      /!*  /!*    <li className="p-5">*!/*!/*/}
+        {/*      /!*  /!*      <img src={homeSmile} width={24} height={25} alt="" />*!/*!/*/}
+        {/*      /!*  /!*    </li>*!/*!/*/}
+        {/*      /!*  /!*    <li className="p-5">*!/*!/*/}
+        {/*      /!*  /!*      <img src={file02} width={24} height={25} alt="" />*!/*!/*/}
+        {/*      /!*  /!*    </li>*!/*!/*/}
+        {/*      /!*  /!*    <li className="p-5">*!/*!/*/}
+        {/*      /!*  /!*      <img src={searchMd} width={24} height={25} alt="" />*!/*!/*/}
+        {/*      /!*  /!*    </li>*!/*!/*/}
+        {/*      /!*  /!*    <li className="p-5">*!/*!/*/}
+        {/*      /!*  /!*      <img src={plusSquare} width={24} height={25} alt="" />*!/*!/*/}
+        {/*      /!*  /!*    </li>*!/*!/*/}
+        {/*      /!*  /!*  </ul>*!/*!/*/}
+        {/*      /!*  /!*</ScrollParallax>*!/*!/*/}
 
-                {/*<ScrollParallax isAbsolutelyPositioned>*/}
-                {/*  <Notification*/}
-                {/*    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"*/}
-                {/*    title="Code generation"*/}
-                {/*  />*/}
-                {/*</ScrollParallax>*/}
-              </div>
-            </div>
+        {/*      /!*  /!*<ScrollParallax isAbsolutelyPositioned>*!/*!/*/}
+        {/*      /!*  /!*  <Notification*!/*!/*/}
+        {/*      /!*  /!*    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"*!/*!/*/}
+        {/*      /!*  /!*    title="Code generation"*!/*!/*/}
+        {/*      /!*  /!*  />*!/*!/*/}
+        {/*      /!*  /!*</ScrollParallax>*!/*!/*/}
+        {/*      /!*</div>*!/*/}
+        {/*    </div>*/}
 
-            <div className="relative z-1 h-6 mx-2.5 bg-[#1B1B2E] shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-8" />
-            <div className="relative z-1 h-6 mx-6 bg-[#1B1B2E]/70 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-20" />
-          </div>
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            <img
-              src={heroBackground}
-              className="w-full"
-              width={1440}
-              height={1800}
-              alt="hero"
-            />
-          </div>
+        {/*    <div className="relative z-1 h-6 mx-2.5 bg-[#1B1B2E] shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-8" />*/}
+        {/*    <div className="relative z-1 h-6 mx-6 bg-[#1B1B2E]/70 shadow-xl rounded-b-[1.25rem] lg:h-6 lg:mx-20" />*/}
+        {/*  </div>*/}
+        {/*  <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">*/}
+        {/*    /!*<img*!/*/}
+        {/*    /!*  src={heroBackground}*!/*/}
+        {/*    /!*  className="w-full"*!/*/}
+        {/*    /!*  width={1440}*!/*/}
+        {/*    /!*  height={1800}*!/*/}
+        {/*    /!*  alt="hero"*!/*/}
+            {/*/>*/}
+        {/*  </div>*/}
 
-          <BackgroundCircles />
-        </div>
+        {/*  /!*<BackgroundCircles />*!/*/}
+        {/*</div>*/}
 
       </div>
 
-      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-n-6 pointer-events-none xl:block" />
-      <PlusSvg className="hidden absolute top-[54.9375rem] left-[2.1875rem] z-2 pointer-events-none xl:block" />
-      <PlusSvg className="hidden absolute top-[54.9375rem] right-[2.1875rem] z-2 pointer-events-none xl:block" />
+      {/*<PlusSvg className="hidden absolute top-[54.9375rem] left-[2.1875rem] z-2 pointer-events-none xl:block" />*/}
+      {/*<PlusSvg className="hidden absolute top-[54.9375rem] right-[2.1875rem] z-2 pointer-events-none xl:block" />*/}
     </Section>
   );
 };

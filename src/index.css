@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-blue-950 text-white text-base;
+    @apply font-sans bg-mauve-700 text-white text-base;
   }
   * {
     @apply border-border outline-ring/50;

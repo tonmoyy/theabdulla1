@@ -3,6 +3,9 @@ export { default as curve } from './hero/curve.png';
 export { default as robot } from './hero/robot.jpeg';
 export { default as heroBackground } from './hero/hero-background.jpg';
 
+export{default as urban} from './urban-skyline.jpeg'
+export{default as urban1} from './urban-1.jpg'
+
 // Partnerships Section
 export { default as curve1 } from './collaboration/curve-1.svg';
 export { default as curve2 } from './collaboration/curve-2.svg';
