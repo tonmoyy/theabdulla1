@@ -1,12 +1,15 @@
-import Benefits from "./sections/About.jsx";
 import Partnerships from "./sections/Partnerships.jsx";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import Pricing from "./sections/InvestmentPhilosophy.jsx";
-import Roadmap from "./sections/GeograjpicOutlook.jsx";
 import CorePillars from "./sections/CorePillars.jsx";
 import { BrowserRouter } from 'react-router-dom';
+import About from "./sections/About.jsx";
+import InvestmentPhilosophy from "./sections/InvestmentPhilosophy.jsx";
+import Geographic from "./sections/GeograjpicOutlook.jsx";
+import Contact from "@/sections/Contact.jsx";
+
+
 
 const App = () => {
     return (
@@ -15,11 +18,12 @@ const App = () => {
                 <BrowserRouter>
                     <Navbar />
                    <Hero />
-                   <Benefits />
+                   <About />
                    <Partnerships />
                    <CorePillars />
-                   <Pricing />
-                   <Roadmap />
+                   <InvestmentPhilosophy />
+                   <Geographic />
+                    <Contact/>
                    <Footer />
                     </BrowserRouter>
             </div>
