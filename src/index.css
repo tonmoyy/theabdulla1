@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "flowbite-react/plugin/tailwindcss";
+@import "@fontsource/manrope";
+
 @source "../.flowbite-react/class-list.json";
 
 .swiper-wrapper {
@@ -14,7 +16,16 @@
   --wp--preset--font-size--23: 1.43rem;
   --wp--preset--color--midnight: #010127;
   --wp--preset--font-family--canela: 'Canela', serif;
+  --wp--preset--color--goldenrod: #daa520;
+  --wp--preset--font-size--22: 22px;
+  --wp--preset--color--deep-grey: #4a4a4a;
+  --wp--preset--color--sky-blue: #87CEEB;
+  --wp--preset--font-size--24: 24px;
   --media-val: 768px;
+  --wp--preset--font-size--20: 20px;
+  --wp--preset--font-family--manrope: 'Manrope', sans-serif;
+
+
 }
 
 img:is([sizes="auto" i], [sizes^="auto," i]) {
@@ -70,6 +81,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    font-family: "Manrope", sans-serif;
   }
   h1:first-child,
   h2:first-child,
@@ -94,10 +106,15 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   ul ul {
     list-style-type: circle;
   }
-  .gm-header__menu > li.menu-item-has-children .sub-menu .menu-item-row li a:hover {
+  .gm-header__menu
+    > li.menu-item-has-children
+    > .sub-menu
+    > .menu-item-wrap
+    .menu-item-row
+    li
+    a:hover {
     font-weight: 700;
   }
-
   img,
   svg {
     vertical-align: middle;
@@ -313,7 +330,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     transform-origin: 50% 0;
     transform: scaleY(0);
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     pointer-events: fill;
   }
   .gm-header__menu > li.menu-item-has-children > .sub-menu > .menu-item-wrap {
@@ -474,7 +491,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     margin: 0;
     z-index: 9;
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     transition: all 0.2s;
   }
   .gm-header__search .js-search-form,
@@ -1159,8 +1176,8 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   }
   .remodal-overlay,
   .remodal-wrapper {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
   }
   .remodal {
     position: relative;
@@ -1196,7 +1213,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     max-width: 300px;
     position: relative;
     margin-bottom: clamp(2.5rem, 2.5rem + ((1vw - 0.48rem) * 3.1646), 3.75rem);
-    visibility: hidden;
+    visibility: visible;
   }
   @media (min-width: 1024px) {
     .gm-home-page-hero__title {
@@ -1262,7 +1279,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   }
   .gm-home-page-hero__description {
     margin-left: clamp(2.5rem, 2.5rem + ((1vw - 0.48rem) * 15.8228), 8.75rem);
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-home-page-hero__description {
     font-size: var(--wp--preset--font-size--23);
@@ -1276,7 +1293,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-home-page-hero__media img {
     position: absolute;
@@ -1486,7 +1503,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   }
   .gm-stats__btn,
   .gm-stats__text {
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-stats__row {
     display: flex;
@@ -1529,7 +1546,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     flex-direction: column;
     position: relative;
     z-index: 5;
-    visibility: hidden;
+    visibility: visible;
   }
   @media (max-width: 400px) {
     .gm-stats__item {
@@ -1631,7 +1648,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   .gm-featured-content-2up__header {
     padding: clamp(3.75rem, 3.75rem + ((1vw - 0.62rem) * 29.4118), 11.25rem) 0
       clamp(5.9375rem, 5.9375rem + ((1vw - 0.62rem) * 22.0588), 11.5625rem);
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-featured-content-2up__header-container {
     max-width: min(
@@ -1684,7 +1701,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     color: var(--wp--preset--color--deep-grey);
     text-decoration: none;
     font-weight: 400;
-    visibility: hidden;
+    visibility: visible;
   }
   @media (min-width: 768px) {
     .gm-featured-content-2up__item {
@@ -1797,7 +1814,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     max-width: 235px;
     height: 285px;
     position: relative;
-    visibility: hidden;
+    visibility: visible;
     margin-left: 25px;
   }
   @media (max-width: 767px) {
@@ -1836,7 +1853,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     }
   }
   .gm-flexible-small-image-content__text {
-    visibility: hidden;
+    visibility: visible;
   }
   @media (max-width: 767px) {
     .gm-flexible-small-image-content__text:not(
@@ -1864,7 +1881,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
       3.875rem + ((1vw - 0.48rem) * 4.4304),
       5.625rem
     );
-    visibility: hidden;
+    visibility: visible;
   }
   @media (min-width: 1200px) {
     .gm-links-carousel-images__heading {
@@ -1882,7 +1899,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     flex-wrap: wrap;
     align-items: flex-start;
     gap: clamp(1.875rem, 1.875rem + ((1vw - 0.48rem) * 9.4937), 5.625rem);
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-links-carousel-images__select-hover {
     position: relative;
@@ -1892,7 +1909,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
-    visibility: hidden;
+    visibility: visible;
   }
   @media (max-width: 1199px) {
     .gm-links-carousel-images__select-hover {
@@ -2112,7 +2129,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     height: 100%;
     z-index: 9999;
     overflow: hidden;
-    visibility: hidden;
+    visibility: visible;
     opacity: 0;
     transition: all 0.3s 0s;
   }
@@ -2200,7 +2217,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     flex-wrap: wrap;
     align-items: center;
     gap: clamp(3.125rem, 3.125rem + ((1vw - 0.48rem) * 6.3291), 5.625rem);
-    visibility: hidden;
+    visibility: visible;
   }
   .gm-large-image-content__media {
     flex: 0 0 100%;
@@ -2478,7 +2495,7 @@ a:where(:not(.wp-element-button)) {
   text-decoration: none;
 }
 :root :where(a:where(:not(.wp-element-button)):focus) {
-  outline-width: 1;
+  outline-width: 2px;
 }
 h1,
 h2,

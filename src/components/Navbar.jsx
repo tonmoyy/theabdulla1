@@ -1,4 +1,5 @@
 import { Logo3 } from "../assets";
+import {business1} from '../assets';
 
 const Navbar = () => {
   return (
@@ -743,11 +744,8 @@ const Navbar = () => {
               decoding="async"
               width={2048}
               height={1712}
-              src="wp-content/uploads/2023/08/gtchphero-e1691176665403-2048x1712.jpg"
-              className="preload-img"
-              alt="a glass building with sun shining through it"
-              srcSet="https://www.TheAbdullaCapital.com/wp-content/uploads/2023/08/gtchphero-e1691176665403-2048x1712.jpg 2048w, https://www.TheAbdullaCapital.com/wp-content/uploads/2023/08/gtchphero-e1691176665403-300x251.jpg 300w, https://www.TheAbdullaCapital.com/wp-content/uploads/2023/08/gtchphero-e1691176665403-1024x856.jpg 1024w, https://www.TheAbdullaCapital.com/wp-content/uploads/2023/08/gtchphero-e1691176665403-768x642.jpg 768w, https://www.TheAbdullaCapital.com/wp-content/uploads/2023/08/gtchphero-e1691176665403-1536x1284.jpg 1536w"
-              sizes="(max-width: 2048px) 100vw, 2048px"
+              src={business1}
+
             />{" "}
           </div>
           <div className="gm-home-page-hero__lines">
