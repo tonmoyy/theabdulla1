@@ -1,19 +1,32 @@
 import { Logo3 } from "../assets";
 import {business1} from '../assets';
+import {useState} from "react";
 
 const Navbar = () => {
-  return (
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const containerStyle = {
+    right: 'clamp(7.5rem, 4.46203rem + 6.3291vw, 10rem)',
+    position: 'absolute', // Standard for hero decorative lines
+  };
+
+    return (
     <div>
       {/* Mirrored from www.TheAbdullaCapital.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2026 15:05:00 GMT */}
       {/* Added by HTTrack */}
       <meta httpEquiv="content-type" content="text/html;charset=UTF-8" />
       {/* /Added by HTTrack */}
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta charSet="UTF-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no"
-      />
+      {/*<meta name="mobile-web-app-capable" content="yes" />*/}
+      {/*<meta charSet="UTF-8" />*/}
+      {/*<meta*/}
+      {/*  name="viewport"*/}
+      {/*  content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no"*/}
+      {/*/>*/}
       <link rel="preconnect" href="https://fonts.googleapis.com/" />
       <link
         rel="preconnect"
@@ -64,10 +77,10 @@ const Navbar = () => {
         //crossOrigin={"anonymous"}
       />
       <link rel="preload" as="font" type="font/ttf" crossOrigin={"anonymous"} />
-      <meta
-        name="google-site-verification"
-        content="xrwHk8i-dOCLxcRAvbKFczPXIQ0yM8r5WlE2OOYz2TI"
-      />
+      {/*<meta*/}
+      {/*  name="google-site-verification"*/}
+      {/*  content="xrwHk8i-dOCLxcRAvbKFczPXIQ0yM8r5WlE2OOYz2TI"*/}
+      {/*/>*/}
       {/* Hotjar Tracking Code for https://www.TheAbdullaCapital.com/ */}
       {/* Clarity tracking code for https://www.TheAbdullaCapital.com/ */}
       {/* Pardot  */}
@@ -142,7 +155,7 @@ const Navbar = () => {
         title="RSD"
         href="xmlrpc0db0.html?rsd"
       />
-      <meta name="generator" content="WordPress 6.9" />
+
       <link rel="shortlink" href="index.html" />
       {/* Google Tag Manager for WordPress by gtm4wp.com */}
       {/* GTM Container placement set to automatic */}
@@ -507,42 +520,48 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button
-              className="gm-header__open-menu js-open-menu"
-              aria-label="open menu"
-            >
-              <span style={{ display: "none" }}>open-menu</span>
-              <span />
-            </button>
+            {/*<button*/}
+            {/*  className="gm-header__open-menu js-open-menu"*/}
+            {/*  aria-label="open menu"*/}
+            {/* */}
+            {/*>*/}
+
+              <button className=" gm-header__open-menu js-open-menu" onClick={toggleMenu}>
+                {isOpen ? '✕' : '☰'}
+              </button>
+            {/*  <span style={{ display: "none" }}>open-menu</span>*/}
+            {/*  <span />*/}
+            {/*</button>*/}
           </div>
         </div>
-        <div className="gm-mobile-header">
+         <div className={`${isOpen ? 'open' : 'hidden'} `}>
+           {/*"gm-mobile-header"*/}
           <div className="gm-container-wide">
             <ul id="menu-header-menu-1" className="gm-mobile-header__menu">
-              <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40">
+              <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40 ">
                 <div className="menu-item-children">
                   <a href="about-us/index.html">
                     <span>About Us</span>
                   </a>
-                  <button
-                    className="menu-item-open-sub-menu js-open-sub-menu"
-                    aria-label="open sub-menu"
-                  >
-                    <span style={{ display: "none" }}>open-sub-menu</span>
-                    <svg
-                      role="presentation"
-                      width={18}
-                      height={17}
-                      viewBox="0 0 18 17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15.9492 4.20421C14.0287 6.36232 10.9384 9.69296 8.96771 11.8484L8.86227 11.9648L8.75683 11.8484L5.25728 8.03577C4.38368 7.09073 2.63388 5.16821 1.77528 4.20421L1.88078 4.09041C4.86318 5.78831 7.42881 8.17116 9.81874 10.7003H7.90328C9.66812 8.79938 11.576 7.02574 13.6396 5.50661C14.3501 5.00841 15.0555 4.50471 15.8438 4.09041L15.9492 4.20421Z"
-                        fill="#003147"
-                      />
-                    </svg>
-                  </button>
+                  {/*<button*/}
+                  {/*  className="menu-item-open-sub-menu js-open-sub-menu"*/}
+                  {/*  aria-label="open sub-menu"*/}
+                  {/*>*/}
+                  {/*  <span style={{ display: "none" }}>open-sub-menu</span>*/}
+                  {/*  <svg*/}
+                  {/*    role="presentation"*/}
+                  {/*    width={18}*/}
+                  {/*    height={17}*/}
+                  {/*    viewBox="0 0 18 17"*/}
+                  {/*    fill="none"*/}
+                  {/*    xmlns="http://www.w3.org/2000/svg"*/}
+                  {/*  >*/}
+                  {/*    <path*/}
+                  {/*      d="M15.9492 4.20421C14.0287 6.36232 10.9384 9.69296 8.96771 11.8484L8.86227 11.9648L8.75683 11.8484L5.25728 8.03577C4.38368 7.09073 2.63388 5.16821 1.77528 4.20421L1.88078 4.09041C4.86318 5.78831 7.42881 8.17116 9.81874 10.7003H7.90328C9.66812 8.79938 11.576 7.02574 13.6396 5.50661C14.3501 5.00841 15.0555 4.50471 15.8438 4.09041L15.9492 4.20421Z"*/}
+                  {/*      fill="#003147"*/}
+                  {/*    />*/}
+                  {/*  </svg>*/}
+                  {/*</button>*/}
                 </div>
                 <ul className="sub-menu">
                   <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-41">
@@ -577,25 +596,25 @@ const Navbar = () => {
                   <a>
                     <span>A True Partnership</span>
                   </a>
-                  <button
-                    className="menu-item-open-sub-menu js-open-sub-menu"
-                    aria-label="open sub-menu"
-                  >
-                    <span style={{ display: "none" }}>open-sub-menu</span>
-                    <svg
-                      role="presentation"
-                      width={18}
-                      height={17}
-                      viewBox="0 0 18 17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15.9492 4.20421C14.0287 6.36232 10.9384 9.69296 8.96771 11.8484L8.86227 11.9648L8.75683 11.8484L5.25728 8.03577C4.38368 7.09073 2.63388 5.16821 1.77528 4.20421L1.88078 4.09041C4.86318 5.78831 7.42881 8.17116 9.81874 10.7003H7.90328C9.66812 8.79938 11.576 7.02574 13.6396 5.50661C14.3501 5.00841 15.0555 4.50471 15.8438 4.09041L15.9492 4.20421Z"
-                        fill="#003147"
-                      />
-                    </svg>
-                  </button>
+                  {/*<button*/}
+                  {/*  className="menu-item-open-sub-menu js-open-sub-menu"*/}
+                  {/*  aria-label="open sub-menu"*/}
+                  {/*>*/}
+                  {/*  <span style={{ display: "block" }}>open-sub-menu</span>*/}
+                  {/*  <svg*/}
+                  {/*    role="presentation"*/}
+                  {/*    width={18}*/}
+                  {/*    height={17}*/}
+                  {/*    viewBox="0 0 18 17"*/}
+                  {/*    fill="none"*/}
+                  {/*    xmlns="http://www.w3.org/2000/svg"*/}
+                  {/*  >*/}
+                  {/*    <path*/}
+                  {/*      d="M15.9492 4.20421C14.0287 6.36232 10.9384 9.69296 8.96771 11.8484L8.86227 11.9648L8.75683 11.8484L5.25728 8.03577C4.38368 7.09073 2.63388 5.16821 1.77528 4.20421L1.88078 4.09041C4.86318 5.78831 7.42881 8.17116 9.81874 10.7003H7.90328C9.66812 8.79938 11.576 7.02574 13.6396 5.50661C14.3501 5.00841 15.0555 4.50471 15.8438 4.09041L15.9492 4.20421Z"*/}
+                  {/*      fill="#003147"*/}
+                  {/*    />*/}
+                  {/*  </svg>*/}
+                  {/*</button>*/}
                 </div>
                 <ul className="sub-menu">
                   <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3185">
@@ -654,7 +673,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <div className="gm-mobile-header__info">
+            <div className="gm-mobile-header__info " >
               <a
                 className="gm-btn gm-btn_blue gm-btn_min"
                 href="contact-us/index.html"
@@ -674,7 +693,7 @@ const Navbar = () => {
               </a>
               <div className="gm-mobile-header__search">
                 <div className="js-mobile-search">
-                  <label htmlFor="mobile-search" style={{ display: "none" }}>
+                  <label htmlFor="mobile-search" style={{ display: "visible" }}>
                     mobile-search
                   </label>
                   <input
@@ -691,7 +710,7 @@ const Navbar = () => {
                   className="gm-mobile-header__search-open js-mobile-search-open"
                   aria-label="open search bar"
                 >
-                  <span style={{ display: "none" }}>mobile-search-open</span>
+                  <span style={{ display: "block" }}>mobile-search-open</span>
                   <svg
                     role="presentation"
                     width={17}
@@ -721,8 +740,8 @@ const Navbar = () => {
       </header>
       <main id="gm-main" className="main-wrapper">
         <section
-          id="gm-home-page-hero-block_844d7ab1cb949749438679af64370224"
-          className="gm-home-page-hero align-full gm-section-element"
+            id="gm-home-page-hero-block_844d7ab1cb949749438679af64370224"
+            className="gm-home-page-hero align-full gm-section-element"
         >
           <div className="gm-container-wide js-container">
             <div className="gm-home-page-hero__title">
@@ -740,26 +759,27 @@ const Navbar = () => {
           </div>
           <div className="gm-home-page-hero__media">
             <img
-              fetchPriority="high"
-              decoding="async"
-              width={2048}
-              height={1712}
-              src={business1}
+                fetchPriority="high"
+                decoding="async"
+                width={2048}
+                height={1712}
+                src={business1}
 
             />{" "}
           </div>
-          <div className="gm-home-page-hero__lines">
-            <div className="ln1" />
-            <div className="ln2" />
-            <div className="ln3" />
-            <div className="ln4" />
+          <div className="gm-home-page-hero__lines" style={containerStyle}>
+            <div className="ln1" style={{ width: '100%' }}></div>
+            <div className="ln2" style={{ height: '100%' }}></div>
+            <div className="ln3" style={{ width: '100%' }}></div>
+            <div className="ln4" style={{ height: '100%' }}></div>
           </div>
         </section>
         <section
-          id="gm-flexible-small-image-content-block_39347a86ddcd341afac95ff5a57bf6b6"
-          className="gm-flexible-small-image-content align-full gm-section-element gm-flexible-small-image-content_bg-sand-text-deepgrey-cta-drkblu"
+            id="gm-flexible-small-image-content-block_39347a86ddcd341afac95ff5a57bf6b6"
+            className="gm-flexible-small-image-content align-full gm-section-element gm-flexible-small-image-content_bg-sand-text-deepgrey-cta-drkblu"
         >
-          <div className="gm-flexible-small-image-content__container gm-flexible-small-image-content__container_text-right">
+          <div
+              className="gm-flexible-small-image-content__container gm-flexible-small-image-content__container_text-right">
             <div className="gm-flexible-small-image-content__image">
               <img
                 decoding="async"
