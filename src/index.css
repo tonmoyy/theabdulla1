@@ -237,7 +237,7 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   .gm-header__logo {
     display: block;
     align-self: center;
-    width: clamp(8.875rem, 8.875rem + ((1vw - 0.48rem) * 10.443), 13rem);
+    /* width: clamp(8.875rem, 8.875rem + ((1vw - 0.48rem) * 10.443), 13rem); */
   }
   .gm-header__wrap {
     height: inherit;

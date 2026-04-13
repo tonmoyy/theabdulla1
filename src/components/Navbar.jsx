@@ -228,8 +228,8 @@ const Navbar = () => {
           >
             <span style={{ display: "none" }}>link</span>
             <img
-              width={100}
-              height={60}
+              width={200}
+              height={100}
               src={Logo3}
               className="attachment-medium_large size-medium_large"
               alt="The Abdulla Capital"
