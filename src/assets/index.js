@@ -61,6 +61,9 @@ export { default as AS } from "./AS.png";
 export { default as invphil1 } from "./invphil1.png";
 export { default as Abdulla1 } from "./Abdulla1.png";
 export { default as LogoAbdulla3 } from "./LogoAbdulla3.png";
+export { default as dfm } from "./dfm.webp";
+export { default as CNN_International_logo } from "./CNN_International_logo.png";
+export { default as cnbc } from "./cnbc.jpg";
 // Socials Section
 export { default as discordBlack } from "./socials/discord.svg";
 export { default as facebook } from "./socials/facebook.svg";

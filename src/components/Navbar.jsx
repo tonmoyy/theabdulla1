@@ -6,6 +6,9 @@ import { Bullet } from "@apptane/react-ui-bullet";
 import { invphil1 } from "../assets";
 import { Abdulla1 } from "../assets";
 import { LogoAbdulla3 } from "../assets";
+import { dfm } from "../assets";
+import { CNN_International_logo } from "../assets";
+import { cnbc } from "../assets";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -1833,7 +1836,7 @@ const Navbar = () => {
                       decoding="async"
                       width={212}
                       height={142}
-                      src="#"
+                      src={dfm}
                       className="attachment-medium size-medium lazyload"
                       alt="Associated Press"
                       data-src="wp-content/uploads/2024/11/Associated_Press_logo-copy.png"
@@ -1873,7 +1876,7 @@ const Navbar = () => {
                       decoding="async"
                       width={212}
                       height={142}
-                      src="#"
+                      src={CNN_International_logo}
                       className="attachment-medium size-medium lazyload"
                       data-src="wp-content/uploads/2024/11/CNN_logo-copy.png"
                     />{" "}
@@ -1938,7 +1941,7 @@ const Navbar = () => {
                       decoding="async"
                       width={214}
                       height={142}
-                      src="#"
+                      src={cnbc}
                       className="attachment-medium size-medium lazyload"
                       data-src="wp-content/uploads/2024/10/Frame-427320548.png"
                     />{" "}
