@@ -1,6 +1,6 @@
 import { Logo3 } from "../assets";
 import { business1 } from "../assets";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AS } from "../assets";
 import { Bullet } from "@apptane/react-ui-bullet";
 import { invphil1 } from "../assets";
@@ -34,6 +34,44 @@ const Navbar = () => {
     transform: "translate(0px, 0px)",
   };
 
+  // States and refs for Div 1
+  const [isVisible1, setIsVisible1] = useState(false);
+  const domRef1 = useRef();
+
+  // States and refs for Div 2
+  const [isVisible2, setIsVisible2] = useState(false);
+  const domRef2 = useRef();
+
+  // Reusable observer effect logic
+  const createObserver = (setState) =>
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setState(true);
+            // Optional: stop observing once visible
+            // observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.99 },
+    );
+
+  useEffect(() => {
+    const observer1 = createObserver(setIsVisible1);
+    const { current: current1 } = domRef1;
+    if (current1) observer1.observe(current1);
+
+    const observer2 = createObserver(setIsVisible2);
+    const { current: current2 } = domRef2;
+    if (current2) observer2.observe(current2);
+
+    return () => {
+      if (current1) observer1.unobserve(current1);
+      if (current2) observer2.unobserve(current2);
+    };
+  }, []);
+
   return (
     <div>
       {/* Mirrored from www.TheAbdullaCapital.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2026 15:05:00 GMT */}
@@ -53,7 +91,7 @@ const Navbar = () => {
         // crossOrigin={anonymous}
       />
       <link
-        rel="icon"
+        rel=" icon "
         type="image/png"
         href="favicon-96x96.png"
         sizes="96x96"
@@ -249,7 +287,7 @@ const Navbar = () => {
             <ul id="menu-header-menu" className="gm-header__menu">
               <li
                 id="menu-item-40"
-                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40"
+                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40 "
               >
                 <a href="about/index.html" data-title="About Us">
                   <span>About</span>
@@ -270,7 +308,7 @@ const Navbar = () => {
                 <ul className="sub-menu">
                   <li
                     id="menu-item-41"
-                    className="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"
+                    className=" menu-item menu-item-type-custom menu-item-object-custom menu-item-41 "
                   >
                     <a href="about/index.html#who-we-are" data-title="Vision">
                       <span>Vision</span>
@@ -902,7 +940,10 @@ const Navbar = () => {
               <div className="gm-flexible-small-image-content__frame" />
             </div>
             <div className="gm-flexible-small-image-content__content">
-              <div className="gm-flexible-small-image-content__text gm-flexible-small-image-content__text_left">
+              <div
+                ref={domRef1}
+                className={`gm-flexible-small-image-content__text ${isVisible1 ? "is-visible" : ""}`}
+              >
                 <h2> A Multi-Disciplinary Capital Platform</h2>
                 <p>
                   Abdulla Capital operates at the intersection of private
@@ -919,7 +960,10 @@ const Navbar = () => {
           id="gm-links-carousel-images-block_90c699bbddfa7a18f235fdaa3e69ef4b"
           className="gm-links-carousel-images align-full gm-section-element gm-links-carousel-images_bg-ltblu-text-deepgrey-cta-drkblu"
         >
-          <div className="gm-links-carousel-images__heading">
+          <div
+            ref={domRef2}
+            className={`gm-links-carousel-images__heading ${isVisible2 ? "is-visible" : ""}`}
+          >
             <h2> Disciplined Capital Allocation</h2>
             <p>
               We operate with a disciplined investment framework rooted in

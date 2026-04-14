@@ -42,6 +42,17 @@
   }
 }
 
+@keyframes fadeInUp1 {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0); /* Starts slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); /* Ends in original position */
+  }
+}
+
 @keyframes growWidth {
   from {
     width: 0;
@@ -2064,9 +2075,27 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
       max-width: 100%;
     }
   }
+  /*.gm-flexible-small-image-content__text {*/
+  /*  visibility: visible;*/
+  /*  animation: fadeInUp1 0.5s ease-out forwards;*/
+  /*  opacity: 0;*/
+  /*}*/
   .gm-flexible-small-image-content__text {
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Optional: Start slightly lower */
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out,
+      visibility 0.5s;
   }
+
+  .gm-flexible-small-image-content__text.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
   @media (max-width: 767px) {
     .gm-flexible-small-image-content__text:not(
       .gm-flexible-small-image-content__text_no-img
@@ -2081,7 +2110,31 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
     padding: clamp(3.75rem, 3.75rem + ((1vw - 0.48rem) * 18.9873), 11.25rem) 0;
     overflow: hidden;
   }
+  /*.gm-links-carousel-images__heading {*/
+  /*max-width: min(*/
+  /*  100% - clamp(3.125rem, 3.125rem + ((1vw - 0.48rem) * 17.4051), 10rem),*/
+  /*  840px*/
+  /*);*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*margin-bottom: clamp(*/
+  /*  3.875rem,*/
+  /*  3.875rem + ((1vw - 0.48rem) * 4.4304),*/
+  /*  5.625rem*/
+  /*);*/
+  /*visibility: visible;*/
+  /*}*/
   .gm-links-carousel-images__heading {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Start slightly lower */
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out,
+      visibility 0.5s;
+  }
+
+  .gm-links-carousel-images__heading.is-visible {
     max-width: min(
       100% - clamp(3.125rem, 3.125rem + ((1vw - 0.48rem) * 17.4051), 10rem),
       840px
@@ -2093,8 +2146,11 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
       3.875rem + ((1vw - 0.48rem) * 4.4304),
       5.625rem
     );
+    opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
+
   @media (min-width: 1200px) {
     .gm-links-carousel-images__heading {
       text-align: center;
