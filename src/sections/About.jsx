@@ -6,7 +6,17 @@ import {visionBackground} from "../assets";
 
 import { invphil1 } from "../assets";
 
+import {motion} from "framer-motion";
+
 const About = () => {
+    const frameStyle = {
+        padding: '10px',
+        border: '5px solid #333',
+        backgroundColor: '#fff',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+        display: 'inline-block',
+        borderRadius: '8px'
+    };
     const [isVisible, setIsVisible] = useState(false);
     const domRef = useRef();
     const createObserver1 = (setState) => new IntersectionObserver(
@@ -48,7 +58,7 @@ const About = () => {
                 }
             });
         },
-        { threshold: 0.6 }
+        { threshold: 0.99 }
     );
 
     useEffect(() => {
@@ -80,6 +90,13 @@ const About = () => {
         padding: '40px',
         borderRadius: '10px',
         maxWidth: '800px',
+    };
+
+    const leadershipData = {
+        name: "Abdulla Salem",
+        // title: "Chief Executive Officer",
+        description: "Abdulla Salem Entrepreneur, investor, and strategic operator building ventures across the sports and investment ecosystem.",
+        imageUrl: Abdulla1 // Replace with actual image path
     };
 
     return (
@@ -710,60 +727,51 @@ const About = () => {
               id="leadership"
               className="gm-featured-content-2up gm-section-element gm-featured-content-2up_ow-top-dg-text-sand-bottom"
           >
-              <div className="gm-featured-content-2up__header text-center">
-                  <h2 className="h3 gm-featured-content-2up__header-title">
-                      Leadership
-                  </h2>
-              </div>
-              <div>
-                  <div
-                      className="gm-featured-content-2up__content js-content"
-                      data-posts-id="gm-featured-content-2up-block_2bb816a3bcb5f0724d91cdf79c16aff1-news"
+              <motion.div initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                  // exit={{ opacity: 0 }}
+                          transition={{ duration: 0.5 }}>
+                  <h1 className="text-center font-extrabold py-8"> Leadership</h1>
+              </motion.div>
+                  <motion.div
+                      className="leadership-container"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      // exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
                   >
-                      <div className="gm-featured-content-2up__row">
-                          <a
-                              href="uncategorized/new-florida-regional-director/index.html"
-                              className="gm-featured-content-2up__item"
-                          >
-                  <span className="gm-featured-content-2up__item-img">
-                    <img
-                        loading="lazy"
-                        decoding="async"
-                        width={400}
-                        height={762}
-                        src={Abdulla1}
-                        className="attachment-large size-large lazyload"
-                        alt="Greg Khost headshot"
-                        //   sizes="auto, (max-width: 853px) 100vw, 853px"
-                        data-src="https://www.TheAbdullaCapital.com/wp-content/uploads/2026/01/Joe-Coconate_crop-853x1024.jpg"
-                        data-srcset="https://www.TheAbdullaCapital.com/wp-content/uploads/2026/01/Joe-Coconate_crop-853x1024.jpg 853w, https://www.TheAbdullaCapital.com/wp-content/uploads/2026/01/Joe-Coconate_crop-250x300.jpg 250w, https://www.TheAbdullaCapital.com/wp-content/uploads/2026/01/Joe-Coconate_crop-768x921.jpg 768w, https://www.TheAbdullaCapital.com/wp-content/uploads/2026/01/Joe-Coconate_crop.jpg 936w"
-                    />{" "}
-                  </span>
-                              <span className="gm-featured-content-2up__item-date"></span>
-                              <h3 className="h5">Abdulla Salem </h3>
-                              <span className="gm-featured-content-2up__item-excerpt">
-                    Abdulla Salem Entrepreneur, investor, and strategic operator
-                    building ventures across the sports and investment
-                    ecosystem.
-                  </span>
-                              <button className="gm-btn" aria-label="Read more">
-                                  <span>Read more</span>
-                                  <svg
-                                      role="presentation"
-                                      width={8}
-                                      height={15}
-                                      viewBox="0 0 8 15"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                      <path d="M0.115543 0.533203C2.30811 2.43012 5.69188 5.48255 7.8817 7.42906L8 7.5332L7.8817 7.63735L4.00825 11.094C3.04814 11.9569 1.09491 13.6852 0.115543 14.5332L-4.5523e-09 14.4291C1.7249 11.4833 4.1458 8.94907 6.71527 6.58846L6.71527 8.48042C4.78404 6.73724 2.98212 4.85272 1.43879 2.81446C0.932599 2.11273 0.420907 1.41595 -6.07407e-07 0.637347L0.115543 0.533203Z" />
-                                  </svg>
-                              </button>{" "}
-                          </a>
-
+                      {/* Left Side: Image */}
+                      <div style={frameStyle}>
+                      <motion.div
+                          className="image-side"
+                          initial={{ x: -100, opacity: 0 }}
+                          whileInView={{ x: 0, opacity: 1 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{ delay: 0.2, duration: 0.6 }}
+                      >
+                          <img src={leadershipData.imageUrl} alt={leadershipData.name} />
+                      </motion.div>
                       </div>
-                  </div>
-              </div>
+
+                      {/* Right Side: Description */}
+                      <motion.div
+                          className="description-side"
+                          initial={{ x: 100, opacity: 0 }}
+                          whileInView={{ x: 0, opacity: 1 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{ delay: 0.2, duration: 0.6 }}
+                      >
+                          <div className="text-content">
+                              <h1 className="name">{leadershipData.name}</h1>
+                              {/*<h3 className="title">{leadershipData.title}</h3>*/}
+                              <p className="description">{leadershipData.description}</p>
+                              <button className="cta-button">Read Full Bio</button>
+                          </div>
+                      </motion.div>
+                  </motion.div>
+
           </section>
           <section>
               <div className="bg-gray-50 text-gray-900">
