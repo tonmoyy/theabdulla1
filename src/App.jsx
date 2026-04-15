@@ -5,9 +5,11 @@ import Hero from "./sections/Hero";
 import CorePillars from "./sections/CorePillars.jsx";
 import { BrowserRouter } from "react-router-dom";
 import About from "./sections/About.jsx";
+
 import InvestmentPhilosophy from "./sections/InvestmentPhilosophy.jsx";
 import Geographic from "./sections/GeograjpicOutlook.jsx";
 import Contact from "@/sections/Contact.jsx";
+import Featured from "@/components/Featured.jsx";
 
 const App = () => {
   return (
@@ -16,6 +18,9 @@ const App = () => {
         <BrowserRouter>
           <Navbar />
             <About />
+            <CorePillars />
+            <Featured />
+            <Footer />
         </BrowserRouter>
       </div>
     </>

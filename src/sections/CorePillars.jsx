@@ -1,60 +1,42 @@
-import Section from "../components/Section";
 import Heading from "../components/Heading";
 import {service2, gradient} from "../assets";
 import { Button } from "@/components/ui/button";
+import { Target, Lightbulb, TrendingUp ,LucideHandshake,HandCoins} from 'lucide-react';
+import {investment1,advisory1,equity1} from "../assets";
 
-
-//const openaiServicesIcons = [recording03, recording01, disc02, chromecast, sliders04];
 
 const CorePillars = () => {
     return (
-        <Section id="corepillars">
-            <div className="container">
-                <Heading title="Core Pillars"/>
-                <div className="relative">
-                    <div className="relative z-1 grid gap-3 lg:grid-cols-3">
-                        <div className="relative min-h-5 border border-white/10 rounded-3xl overflow-hidden">
-                            <div className="absolute inset-0">
-                                <img src={service2} className="h-full w-full object-cover" width={630} height={750}
-                                     alt=""/>
-                            </div>
-
-                            <div
-                                className="absolute inset-0 flex flex-col justify-center p-8 bg-linear-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                                <h4 className="h4 mb-4">Investment</h4>
-                                <p>Family office style capital stewardship focused on long-term preservation and
-                                    portfolio management.</p>
-                            </div>
-                        </div>
-
-                        <div className="p-4 bg-[#15131D] rounded-3xl overflow-hidden lg:min-h-60">
-                            <div className="py-12 px-4 xl:px-8">
-                                <h4 className="h4 mb-4">Advisory</h4>
-                                <p className="body-2 mb-8 text-n-3">Institutional-grade financial intelligence, due
-                                    diligence, and strategic guidance.</p>
-                            </div>
-                        </div>
-                        <div className="p-4 bg-[#15131D] rounded-3xl overflow-hidden lg:min-h-60">
-                            <div className="py-12 px-4 xl:px-8">
-                                <h4 className="h4 mb-4">Equity</h4>
-                                <p className="body-2 mb-8 text-n-3">Direct investments, acquisitions, and strategic
-                                    partnerships with high-potential businesses.</p>
-                            </div>
-                        </div>
+        <section id="corepillars">
+            {/* Pillars Section */}
+            <div className="py-20">
+                <h1 className="text-center"> The Platform </h1>
+                <div className="grid md:grid-cols-3 gap-8">
+                    <div className="bg-white p-8 rounded-xl shadow-sm h-dvh" style={{backgroundImage: `url(${investment1})`}}>
+                        <HandCoins className="w-20 h-20 text-blue-600 mb-4" />
+                        <h3 className="text-2xl font-semibold mb-2 py-60">Investment</h3>
+                        <p className="text-slate-700 font-extrabold">
+                            Family office-style capital stewardship focused on long-term preservation and disciplined portfolio management.
+                        </p>
                     </div>
-                    <div className="p-6">
-                   <Button variant="secondary" className="absolute right-10 p-6 text-amber-950 font-bold "> Explore more</Button>
+                    <div className="bg-white p-8 rounded-xl shadow-sm border-none" style={{backgroundImage: `url(${advisory1})`}}>
+                        <Lightbulb className="w-15 h-15 text-blue-600 mb-4" />
+                        <h3 className="text-2xl text-white font-semibold mb-2">Advisory </h3>
+                        <p className="text-white">
+                            Institutional-grade financial intelligence, due diligence, and strategic guidance across investment decisions.
+                        </p>
                     </div>
-
-                    <div
-                        className="absolute top-0 -left-40 w-226.5 h-226.5 opacity-50 mix-blend-color-dodge pointer-events-none">
-                        <img
-                            className="absolute top-1/2 left-1/2 w-318.25 max-w-318.25 h-354.25 -translate-x-1/2 -translate-y-1/2"
-                            src={gradient} width={1417} height={1417} alt=""/>
+                    <div className="bg-white p-8 rounded-xl shadow-sm border-none" style={{backgroundImage: `url(${equity1})`}}>
+                        <LucideHandshake className="w-15 h-15 text-blue-600 mb-4" />
+                        <h3 className="text-2xl font-semibold mb-2">Equity</h3>
+                        <p className="text-gray-600">
+                            Direct investments, acquisitions, and long-term partnerships with high-potential businesses.
+                        </p>
                     </div>
                 </div>
             </div>
-        </Section>
+
+        </section>
     );
 };
 

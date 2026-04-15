@@ -71,6 +71,10 @@ export { default as instagram } from "./socials/instagram.svg";
 export { default as telegram } from "./socials/telegram.svg";
 export { default as twitter } from "./socials/twitter.svg";
 
+export {default as visionBackground} from "./visionBackground.jpg";
+export {default as investment1 } from "./investment-1.avif";
+export {default as advisory1} from "./advisory-1.webp";
+export {default as equity1} from "./equity-1.webp";
 // General Imports
 export { default as Logo3 } from "./Logo3.png";
 // export { default as logoabdulla1 } from "./logoabdulla1.jpg";
