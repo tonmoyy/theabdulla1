@@ -226,8 +226,8 @@ const Navbar = () => {
                     <div className="gm-header__wrap" role="navigation" aria-label="main navigation">
                         <ul id="menu-header-menu" className="gm-header__menu">
                             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40">
-                                <a href="#about-us" data-title="Platform Us">
-                                    <span>Platform</span>
+                                <a href="#about-us" data-title="About Us">
+                                    <span>About Us</span>
                                 </a>
                                 <ul className="sub-menu">
                                     <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-41">
@@ -396,7 +396,7 @@ const Navbar = () => {
                             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40">
                                 <div className="menu-item-children">
                                     <a href="about/index.html">
-                                        <span>Platform Us</span>
+                                        <span>About Us</span>
                                     </a>
                                 </div>
                                 <ul className="sub-menu">
