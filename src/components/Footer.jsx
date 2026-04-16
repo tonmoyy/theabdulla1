@@ -1,4 +1,4 @@
-import {LogoAbdulla3} from "@/assets/index.js";
+import {logoabdulla6} from "../assets";
 
 
 const Footerr = () => {
@@ -15,7 +15,7 @@ const Footerr = () => {
               <img
                   width={237}
                   height={41}
-                  src={LogoAbdulla3}
+                  src={logoabdulla6}
                   className="attachment-medium_large size-medium_large"
                   alt="TheAbdullaCapital"
                   decoding="async"

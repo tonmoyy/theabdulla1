@@ -2,6 +2,7 @@ import { Logo3 } from "../assets";
 import { business1 } from "../assets";
 import { useState } from "react";
 import { LogoAbdulla3 } from "../assets";
+import {logoabdulla5} from "../assets";
 
 // Import Swiper styles
 import "swiper/css";
@@ -216,7 +217,7 @@ const Navbar = () => {
                         <img
                             width={200}
                             height={100}
-                            src={Logo3}
+                            src={logoabdulla5}
                             className="attachment-medium_large size-medium_large"
                             alt="The Abdulla Capital"
                             decoding="async"
