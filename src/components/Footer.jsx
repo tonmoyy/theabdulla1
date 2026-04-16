@@ -35,8 +35,8 @@ const Footerr = () => {
                     id="menu-item-22"
                     className="menu-item menu-item-type-custom menu-item-object-custom menu-item-22"
                 >
-                  <a href="about/index.html" data-title="About Us">
-                    <span>About</span>
+                  <a href="about/index.html" data-title="Platform Us">
+                    <span>Platform</span>
                   </a>
                 </li>
                 <li

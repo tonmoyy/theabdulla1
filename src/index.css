@@ -3405,3 +3405,219 @@ body.menu-open {
   border: none;
   cursor: pointer;
 }
+
+/*-------From Deepseek------*/
+
+/* Modern icon button styles */
+.gm-header__search-open,
+.gm-header__search-submit,
+.gm-mobile-header__search-open,
+.gm-header__open-menu,
+.exit-modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.gm-header__search-open:hover,
+.gm-header__search-submit:hover,
+.gm-mobile-header__search-open:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.gm-header__open-menu {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden on desktop, shown on mobile */
+}
+
+@media (max-width: 768px) {
+  .gm-header__open-menu {
+    display: flex;
+  }
+}
+
+/* Search form styles */
+.js-search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.js-search-form input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Mobile menu animation */
+.gm-mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+.gm-mobile-menu.open {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+.gm-mobile-menu.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal close button */
+.exit-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button hover effects */
+.gm-btn_blue:hover svg {
+  transform: translateX(4px);
+  transition: transform 0.3s ease;
+}
+
+
+/*-------DeepSeek---------*/
+
+/* =====================================================
+   SIMPLE SUB-MENU HOVER EFFECTS - OUTLINED STYLES
+   (Non-breaking version)
+   ===================================================== */
+
+/* Desktop Sub-menu Items - Simple Outlined Hover Effect */
+.gm-header__menu .sub-menu li a {
+  transition: all 0.2s ease;
+}
+
+.gm-header__menu .sub-menu li a:hover {
+  outline: 1px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+  color: var(--wp--preset--color--dark-blue) !important;
+}
+
+/* Mobile Sub-menu Items - Simple Outlined Hover Effect */
+.gm-mobile-header__menu .sub-menu a {
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.gm-mobile-header__menu .sub-menu a:hover {
+  outline: 1px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+  color: var(--wp--preset--color--dark-blue) !important;
+}
+
+/* Focus state for accessibility */
+.gm-header__menu .sub-menu li a:focus-visible,
+.gm-mobile-header__menu .sub-menu a:focus-visible {
+  outline: 2px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Optional: Active state for mobile touch */
+@media (max-width: 768px) {
+  .gm-mobile-header__menu .sub-menu a:active {
+    outline: 1px solid var(--wp--preset--color--dark-blue);
+    outline-offset: 4px;
+    background-color: rgba(0, 0, 139, 0.05);
+  }
+}
+
+
+/*----------Deepseek---------*/
+
+/* Add to your global CSS for smoother scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll-triggered animation classes */
+.scroll-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.scroll-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Parallax effect on scroll */
+.parallax {
+  transform: translateY(var(--scroll-offset));
+  transition: transform 0.1s linear;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #57534e, #292524);
+  transform-origin: 0%;
+  z-index: 1000;
+}

@@ -75,6 +75,11 @@ export {default as visionBackground} from "./visionBackground.jpg";
 export {default as investment1 } from "./investment-1.avif";
 export {default as advisory1} from "./advisory-1.webp";
 export {default as equity1} from "./equity-1.webp";
+export {default as geographic1} from "./geographic-1.avif";
+export {default as partnerships1} from "./partnerships-1.jpeg";
+export {default as generation1} from "./generation-1.jpg";
+export {default as vision1} from "./vision-1.webp";
+
 // General Imports
 export { default as Logo3 } from "./Logo3.png";
 // export { default as logoabdulla1 } from "./logoabdulla1.jpg";
