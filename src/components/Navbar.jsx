@@ -55,11 +55,37 @@ const Navbar = () => {
         fontSize: "14px",
     };
 
+    // Modern font styles for hero section
+    const heroTitleStyle = {
+        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
+        fontWeight: "500",
+        letterSpacing: "-0.02em",
+        lineHeight: "1.2",
+    };
+
+    const heroEmphasisStyle = {
+        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
+        fontWeight: "600",
+        fontStyle: "italic",
+        letterSpacing: "-0.02em",
+    };
+
+    const heroDescriptionStyle = {
+        fontFamily: "'Inter', 'Manrope', sans-serif",
+        fontWeight: "400",
+        letterSpacing: "-0.01em",
+        lineHeight: "1.6",
+    };
+
     return (
-        <div>
+        <div className="outline-style-solid">
             <meta httpEquiv="content-type" content="text/html;charset=UTF-8" />
             <link rel="preconnect" href="https://fonts.googleapis.com/" />
             <link rel="preconnect" href="https://fonts.gstatic.com/" />
+
+            {/* Premium Font Imports */}
+            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
             <link
                 rel="icon"
                 type="image/png"
@@ -499,18 +525,18 @@ const Navbar = () => {
             </header>
 
             <main id="gm-main" className="main-wrapper">
-                {/* Hero Section */}
+                {/* Hero Section with Modern Fonts */}
                 <section
                     id="gm-home-page-hero-block_844d7ab1cb949749438679af64370224"
                     className="gm-home-page-hero align-full gm-section-element"
                 >
                     <div className="gm-container-wide js-container">
                         <div className="gm-home-page-hero__title">
-                            <h1 style={headerStyle}>
+                            <h1 style={{ ...headerStyle, ...heroTitleStyle }}>
                                 <span style={{ position: "relative", display: "inline-block" }} className="gm-home-page-hero__title-word gm-home-page-hero__title-word_1">
                                     Building
                                 </span>{" "}
-                                <span style={{ position: "relative", display: "inline-block" }} className="gm-home-page-hero__title-word gm-home-page-hero__title-word_2">
+                                <span style={{ position: "relative", display: "inline-block", ...heroEmphasisStyle }} className="gm-home-page-hero__title-word gm-home-page-hero__title-word_2">
                                     <em>Enduring Value</em>
                                 </span>{" "}
                                 <span style={{ position: "relative", display: "inline-block" }} className="gm-home-page-hero__title-word">
@@ -522,7 +548,7 @@ const Navbar = () => {
                             </h1>
                         </div>
                         <div className="gm-home-page-hero__description">
-                            <p>
+                            <p style={heroDescriptionStyle}>
                                 A private capital platform operating across investment
                                 stewardship, strategic advisory and equity partnerships.
                             </p>

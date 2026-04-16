@@ -3498,3 +3498,53 @@ body.menu-open {
   transform: translateX(4px);
   transition: transform 0.3s ease;
 }
+
+
+/*-------DeepSeek---------*/
+
+/* =====================================================
+   SIMPLE SUB-MENU HOVER EFFECTS - OUTLINED STYLES
+   (Non-breaking version)
+   ===================================================== */
+
+/* Desktop Sub-menu Items - Simple Outlined Hover Effect */
+.gm-header__menu .sub-menu li a {
+  transition: all 0.2s ease;
+}
+
+.gm-header__menu .sub-menu li a:hover {
+  outline: 1px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+  color: var(--wp--preset--color--dark-blue) !important;
+}
+
+/* Mobile Sub-menu Items - Simple Outlined Hover Effect */
+.gm-mobile-header__menu .sub-menu a {
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.gm-mobile-header__menu .sub-menu a:hover {
+  outline: 1px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+  color: var(--wp--preset--color--dark-blue) !important;
+}
+
+/* Focus state for accessibility */
+.gm-header__menu .sub-menu li a:focus-visible,
+.gm-mobile-header__menu .sub-menu a:focus-visible {
+  outline: 2px solid var(--wp--preset--color--dark-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Optional: Active state for mobile touch */
+@media (max-width: 768px) {
+  .gm-mobile-header__menu .sub-menu a:active {
+    outline: 1px solid var(--wp--preset--color--dark-blue);
+    outline-offset: 4px;
+    background-color: rgba(0, 0, 139, 0.05);
+  }
+}
