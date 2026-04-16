@@ -96,9 +96,9 @@ const About = () => {
                             {/* Main Heading */}
                             <motion.div variants={itemVariants}>
                                 <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-stone-900 mb-6 tracking-tight leading-[1.1]">
-                                    Discretionary
+                                   Placeholder// Discretionary
                                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-stone-800 via-stone-700 to-stone-600 font-medium">
-                                        Capital Stewardship
+                                        Capital Stewardship     //Placeholder
                                     </span>
                                 </h1>
                             </motion.div>
