@@ -21,44 +21,7 @@ const Featured = () => {
     return (
         <div>
             {/* ── Logos Showcase ── */}
-            <section id="ta-logos-showcase-block" className="ta-logos-showcase">
-                <div className="ta-logos-showcase__header">
-                    <div className="ta-logos-showcase__header-title">Featured In</div>
-                </div>
-
-                <div className="ta-logos-showcase__body">
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={30}
-                        loop={true}
-                        speed={3000}
-                        autoplay={{
-                            delay: 0,
-                            disableOnInteraction: false,
-                        }}
-                        breakpoints={{
-                            320: { slidesPerView: 2 },
-                            480: { slidesPerView: 3 },
-                            768: { slidesPerView: 4 },
-                            1024: { slidesPerView: 5 },
-                        }}
-                    >
-                        {logos.map((logo, index) => (
-                            <SwiperSlide key={index}>
-                <span className="ta-logos-showcase__item-image">
-                  <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      loading="lazy"
-                      decoding="async"
-                      style={{ maxHeight: "60px", objectFit: "contain", width: "100%" }}
-                  />
-                </span>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </section>
+           
 
             {/* ── "Here to Help" Banner ── */}
             <section

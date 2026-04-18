@@ -1311,7 +1311,6 @@ svg {
   z-index: 10; /* Ensure title sits above the lines */
 }
 
-
 @media (min-width: 1024px) {
   .ta-home-page-hero__title {
     max-width: 400px;
@@ -1708,17 +1707,14 @@ h2 {
   display: none;
 }
 
-/* ========== GOOGLE FONT IMPORT (add at the very top of your CSS file) ========== */
-
 /* ========== FIX CUT-OFF DESCENDERS & MODERN TYPOGRAPHY ========== */
 
-/* Ensure the hero title container does not clip descenders */
 .ta-home-page-hero__title {
   overflow: visible !important;
 }
 
 .ta-home-page-hero__title h1 {
-  line-height: 1.3 !important;        /* increased from 1.2 to prevent clipping */
+  line-height: 1.3 !important;
   overflow: visible !important;
   font-family: 'Inter', 'Manrope', sans-serif !important;
   font-weight: 400 !important;
@@ -1726,25 +1722,21 @@ h2 {
   color: #1a1a1a !important;
 }
 
-/* Remove any background pseudo-elements that may hide parts of letters */
+/* Remove old masking pseudo-elements that may interfere */
 .ta-home-page-hero__title:before,
 .ta-home-page-hero__title-word:before {
   display: none !important;
 }
 
-/* Ensure inline word spans don't clip */
 .ta-home-page-hero__title-word {
-  background-color: transparent !important;
   overflow: visible !important;
 }
 
-/* Make the emphasis italic stand out but stay sleek */
 .ta-home-page-hero__title-word_2 {
   font-weight: 500 !important;
   font-style: italic !important;
 }
 
-/* Description text */
 .ta-home-page-hero__description {
   font-family: 'Inter', 'Manrope', sans-serif !important;
   font-weight: 350 !important;
@@ -1752,120 +1744,55 @@ h2 {
   color: #555555 !important;
 }
 
-/* Override any other conflicting h1 styles */
 h1 {
   font-family: 'Inter', 'Manrope', sans-serif !important;
   font-weight: 400 !important;
   line-height: 1.3 !important;
 }
 
-/* Keep Canela for other headings if desired, but hero stays modern */
 h2, h3, h4 {
   font-family: var(--wp--preset--font-family--canela), serif;
 }
 
-/* Optional: make lines even more subtle */
-/*.ta-home-page-hero__lines .ln1,*/
-/*.ta-home-page-hero__lines .ln2,*/
-/*.ta-home-page-hero__lines .ln3,*/
-/*.ta-home-page-hero__lines .ln4 {*/
-/*  background-color: rgba(30, 30, 30, 0.08) !important;*/
-/*}*/
+/* ========== PRECISE ln1 MASK – LINE HIDDEN BEHIND "Building Enduring Value" ========== */
 
-/* ========== HIDE ln1 BEHIND THE HERO TITLE ========== */
-.ta-home-page-hero__lines .ln1 {
-  /* Keep original animation and properties */
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: rgba(30, 30, 30, 0.08);
-  animation: growWidth 0.5s ease-out 0.8s forwards;
-}
-
-/* Create an overlay mask that covers ln1 only under the title text */
-.ta-home-page-hero__title {
-  position: relative;
-  z-index: 10; /* Ensure it sits above the lines */
-}
-
-.ta-home-page-hero__title::after {
-  content: "";
-  position: absolute;
-  top: -2px;                /* Align with the top line (ln1) thickness */
-  left: 0;
-  width: 100%;
-  height: 4px;               /* Tall enough to cover the line */
-  background-color: #fcf9f5; /* Matches your hero background */
-  pointer-events: none;
-  z-index: 15;
-  transform: translateY(-100%); /* Move it up to sit exactly over ln1 */
-}
-
-/* On mobile, adjust if the title positioning shifts */
-@media (max-width: 767px) {
-  .ta-home-page-hero__title::after {
-    left: -15px;
-    width: calc(100% + 30px);
-  }
-}
-
-/* ========== HIDE ln1 BEHIND HERO TEXT (MINIMAL FIX) ========== */
+/* 1. Ensure the lines container is below the text */
 .ta-home-page-hero__lines {
   z-index: 1 !important;
 }
 
+/* 2. Title container above lines */
 .ta-home-page-hero__title {
-  z-index: 5 !important;
+  z-index: 2 !important;
   position: relative;
 }
 
-.ta-home-page-hero__title h1 {
-  z-index: 5 !important;
-  position: relative;
-}
-
+/* 3. Make each word span an inline-block with a white background that covers the line */
 .ta-home-page-hero__title-word {
+  position: relative;
+  display: inline-block !important;  /* required for background to cover full area */
   background-color: #fcf9f5 !important;
-  z-index: 6 !important;
-  position: relative;
-}
-
-.ta-home-page-hero__lines .ln1 {
-  z-index: 0 !important;
-}
-
-/* ========== HIDE ln1 BEHIND HERO TEXT (NO STYLE CHANGES) ========== */
-
-/* 1. Make the lines container sit underneath the text */
-.ta-home-page-hero__lines {
-  z-index: 1 !important;
-}
-
-/* 2. Keep the title container above the lines */
-.ta-home-page-hero__title {
   z-index: 5 !important;
+  padding: 0 0.1em;                /* tiny padding ensures the line doesn't peek through at edges */
+  margin: 0 -0.1em;                /* offset the padding so text flow isn't affected */
 }
 
-/* 3. Ensure the word pseudo‑elements have a solid background and sit above the line */
-.ta-home-page-hero__title-word {
-  z-index: 6 !important;
-}
-
-.ta-home-page-hero__title-word::before {
-  background-color: #fcf9f5 !important; /* reinforces the white mask */
-  z-index: 6 !important;
-}
-
-/* 4. Explicitly lower ln1 so it stays under everything */
+/* 4. Ensure the line itself is below the text */
 .ta-home-page-hero__lines .ln1 {
   z-index: 0 !important;
+  background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Optional: make lines more visible (adjust opacity as desired) */
+/* 5. Keep all line colors consistent */
 .ta-home-page-hero__lines .ln1,
 .ta-home-page-hero__lines .ln2,
 .ta-home-page-hero__lines .ln3,
 .ta-home-page-hero__lines .ln4 {
   background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* 6. Remove any extra spacing that might expose the line */
+.ta-home-page-hero__title h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }

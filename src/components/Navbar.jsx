@@ -52,7 +52,7 @@ const Navbar = () => {
                     <div className="ta-header__wrap" role="navigation" aria-label="main navigation">
                         <ul id="menu-header-menu" className="ta-header__menu">
                             <li className="menu-item"><a href="/" data-title="Home"><span>Home</span></a></li>
-                            <li className="menu-item"><a href="#about-us" data-title="About" onClick={scrollToAbout}><span>About Us</span></a></li>
+                            <li className="menu-item"><a href="#about-us" data-title="About Us" onClick={scrollToAbout}><span>About Us</span></a></li>
                             <li className="menu-item"><a href="/platform" data-title="Platform"><span>Platform</span></a></li>
                             <li className="menu-item"><a href="/investments" data-title="Investments"><span>Investments</span></a></li>
                             <li className="menu-item"><a href="/partnerships" data-title="Partnerships"><span>Partnerships</span></a></li>
