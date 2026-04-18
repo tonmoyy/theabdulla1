@@ -22,54 +22,51 @@ const Homepage = () => {
         transform: "translate(0px, 0px)",
     };
 
-    // Even lighter coal-gray options
+    // Modern, sleek typography
     const heroTitleStyle = {
-        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
-        fontWeight: "500",
-        letterSpacing: "-0.02em",
-        lineHeight: "1.2",
-        color: "#5a5a5a", // Medium-light gray
+        fontFamily: "'Inter', 'Manrope', sans-serif",
+        fontWeight: "400",
+        letterSpacing: "-0.03em",
+        lineHeight: "1.25",
+        color: "#1a1a1a",
     };
 
     const heroEmphasisStyle = {
-        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
-        fontWeight: "600",
+        fontFamily: "'Inter', 'Manrope', sans-serif",
+        fontWeight: "500",
         fontStyle: "italic",
         letterSpacing: "-0.02em",
-        color: "#8a8a8a", // Lighter gray for emphasis
+        color: "#2a2a2a",
     };
 
     const heroDescriptionStyle = {
         fontFamily: "'Inter', 'Manrope', sans-serif",
-        fontWeight: "400",
+        fontWeight: "350",
         letterSpacing: "-0.01em",
         lineHeight: "1.6",
-        color: "#9a9a9a", // Very soft gray
+        color: "#555555",
     };
 
-    // Line styles with lighter coal-gray
+    // Lighter, more refined line styles
     const lineStyle1 = {
         width: "100%",
         height: "1px",
-        backgroundColor: "rgba(60, 60, 60, 0.1)", // Very light coal-gray
+        backgroundColor: "rgba(30, 30, 30, 0.08)",
     };
-
     const lineStyle2 = {
         height: "100%",
         width: "1px",
-        backgroundColor: "rgba(60, 60, 60, 0.1)",
+        backgroundColor: "rgba(30, 30, 30, 0.08)",
     };
-
     const lineStyle3 = {
         width: "100%",
         height: "1px",
-        backgroundColor: "rgba(60, 60, 60, 0.08)",
+        backgroundColor: "rgba(30, 30, 30, 0.06)",
     };
-
     const lineStyle4 = {
         height: "100%",
         width: "1px",
-        backgroundColor: "rgba(60, 60, 60, 0.08)",
+        backgroundColor: "rgba(30, 30, 30, 0.06)",
     };
 
     return (
@@ -82,16 +79,32 @@ const Homepage = () => {
                 <div className="ta-container-wide js-container">
                     <div className="ta-home-page-hero__title">
                         <h1 style={{ ...headerStyle, ...heroTitleStyle }}>
-                            <span style={{ position: "relative", display: "inline-block"  }} className="ta-home-page-hero__title-word ta-home-page-hero__title-word_1 text-slate-500">
+                            <span
+                                style={{ position: "relative", display: "inline-block" }}
+                                className="ta-home-page-hero__title-word ta-home-page-hero__title-word_1"
+                            >
                                 Building
                             </span>{" "}
-                            <span style={{ position: "relative", display: "inline-block", ...heroEmphasisStyle }} className="ta-home-page-hero__title-word ta-home-page-hero__title-word_2">
+                            <span
+                                style={{
+                                    position: "relative",
+                                    display: "inline-block",
+                                    ...heroEmphasisStyle,
+                                }}
+                                className="ta-home-page-hero__title-word ta-home-page-hero__title-word_2"
+                            >
                                 <em>Enduring Value</em>
                             </span>{" "}
-                            <span style={{ position: "relative", display: "inline-block" }} className="ta-home-page-hero__title-word">
+                            <span
+                                style={{ position: "relative", display: "inline-block" }}
+                                className="ta-home-page-hero__title-word"
+                            >
                                 Through Strategic
                             </span>{" "}
-                            <span style={{ position: "relative", display: "inline-block" }} className="ta-home-page-hero__title-word">
+                            <span
+                                style={{ position: "relative", display: "inline-block" }}
+                                className="ta-home-page-hero__title-word"
+                            >
                                 Capital.
                             </span>
                         </h1>

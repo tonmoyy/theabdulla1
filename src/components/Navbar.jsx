@@ -1,6 +1,4 @@
-// Navbar.jsx - Remove everything inside <main> tag
-// Keep only the header/navigation part, remove the hero section
-
+// Navbar.jsx
 import { useState } from "react";
 import { logoabdulla5 } from "../assets";
 import "swiper/css";
@@ -11,28 +9,17 @@ const Navbar = () => {
     const [searchOpen, setSearchOpen] = useState(false);
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const toggleSearch = () => setSearchOpen(!searchOpen);
+    const toggleMobileSearch = () => setMobileSearchOpen(!mobileSearchOpen);
 
-    const toggleSearch = () => {
-        setSearchOpen(!searchOpen);
-    };
-
-    const toggleMobileSearch = () => {
-        setMobileSearchOpen(!mobileSearchOpen);
-    };
-
-    // Smooth scroll function for about section
     const scrollToAbout = (e) => {
         e.preventDefault();
         const aboutSection = document.getElementById('about-us');
         if (aboutSection) {
             aboutSection.scrollIntoView({ behavior: 'smooth' });
         }
-        if (isOpen) {
-            setIsOpen(false);
-        }
+        setIsOpen(false);
     };
 
     const contactButtonStyle = {
@@ -43,16 +30,12 @@ const Navbar = () => {
     };
 
     const mobileContactButtonStyle = {
-        whiteSpace: "nowrap",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "8px",
+        ...contactButtonStyle,
         fontSize: "14px",
     };
 
     return (
         <div className="outline-style-solid">
-            {/* Header */}
             <header className="ta-header">
                 <div className="ta-container-wide">
                     <a href="/" className="ta-header__logo" aria-label="link to the home page">
@@ -68,35 +51,11 @@ const Navbar = () => {
 
                     <div className="ta-header__wrap" role="navigation" aria-label="main navigation">
                         <ul id="menu-header-menu" className="ta-header__menu">
-                            <li className="menu-item">
-                                <a href="/" data-title="Home">
-                                    <span>Home</span>
-                                </a>
-                            </li>
-
-                            <li className="menu-item">
-                                <a href="#about-us" data-title="About" onClick={scrollToAbout}>
-                                    <span>About Us</span>
-                                </a>
-                            </li>
-
-                            <li className="menu-item">
-                                <a href="/platform" data-title="Platform">
-                                    <span>Platform</span>
-                                </a>
-                            </li>
-
-                            <li className="menu-item">
-                                <a href="/investments" data-title="Investments">
-                                    <span>Investments</span>
-                                </a>
-                            </li>
-
-                            <li className="menu-item">
-                                <a href="/partnerships" data-title="Partnerships">
-                                    <span>Partnerships</span>
-                                </a>
-                            </li>
+                            <li className="menu-item"><a href="/" data-title="Home"><span>Home</span></a></li>
+                            <li className="menu-item"><a href="#about-us" data-title="About" onClick={scrollToAbout}><span>About Us</span></a></li>
+                            <li className="menu-item"><a href="/platform" data-title="Platform"><span>Platform</span></a></li>
+                            <li className="menu-item"><a href="/investments" data-title="Investments"><span>Investments</span></a></li>
+                            <li className="menu-item"><a href="/partnerships" data-title="Partnerships"><span>Partnerships</span></a></li>
                         </ul>
 
                         <div className="ta-header__info">
@@ -126,7 +85,6 @@ const Navbar = () => {
                                             name="s"
                                             maxLength={50}
                                             type="text"
-                                            defaultValue=""
                                             placeholder="Search..."
                                             aria-label="Search"
                                             style={{ padding: "8px", marginRight: "8px" }}
@@ -156,26 +114,10 @@ const Navbar = () => {
                 <div className={`ta-mobile-menu ${isOpen ? "open" : "hidden"}`} style={{ display: isOpen ? "block" : "none" }}>
                     <div className="ta-container-wide">
                         <ul className="ta-mobile-header__menu">
-                            <li>
-                                <a href="#about-us" onClick={scrollToAbout}>
-                                    <span>About Us</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/platform">
-                                    <span>Platform</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/investments">
-                                    <span>Investments</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/partnerships">
-                                    <span>Partnerships</span>
-                                </a>
-                            </li>
+                            <li><a href="#about-us" onClick={scrollToAbout}><span>About Us</span></a></li>
+                            <li><a href="/platform"><span>Platform</span></a></li>
+                            <li><a href="/investments"><span>Investments</span></a></li>
+                            <li><a href="/partnerships"><span>Partnerships</span></a></li>
                         </ul>
 
                         <div className="ta-mobile-header__info">
