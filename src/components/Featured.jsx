@@ -21,12 +21,12 @@ const Featured = () => {
     return (
         <div>
             {/* ── Logos Showcase ── */}
-            <section id="gm-logos-showcase-block" className="gm-logos-showcase">
-                <div className="gm-logos-showcase__header">
-                    <div className="gm-logos-showcase__header-title">Featured In</div>
+            <section id="ta-logos-showcase-block" className="ta-logos-showcase">
+                <div className="ta-logos-showcase__header">
+                    <div className="ta-logos-showcase__header-title">Featured In</div>
                 </div>
 
-                <div className="gm-logos-showcase__body">
+                <div className="ta-logos-showcase__body">
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={30}
@@ -45,7 +45,7 @@ const Featured = () => {
                     >
                         {logos.map((logo, index) => (
                             <SwiperSlide key={index}>
-                <span className="gm-logos-showcase__item-image">
+                <span className="ta-logos-showcase__item-image">
                   <img
                       src={logo.src}
                       alt={logo.alt}
@@ -62,22 +62,22 @@ const Featured = () => {
 
             {/* ── "Here to Help" Banner ── */}
             <section
-                className="gm-background-image align-full gm-section-element gm-background-image_text-left-cta-right"
+                className="ta-background-image align-full ta-section-element ta-background-image_text-left-cta-right"
             >
                 <div
-                    className="gm-background-image__overlay"
+                    className="ta-background-image__overlay"
                     style={{ opacity: "0.7" }}
                 />
-                <div className="gm-background-image__container">
-                    <div className="gm-background-image__content">
+                <div className="ta-background-image__container">
+                    <div className="ta-background-image__content">
                         <h2>
                             We're <em>here to help</em>
                         </h2>
                         <p>Get to know our team and how we can partner with you.</p>
                     </div>
-                    <div className="gm-background-image__btn">
+                    <div className="ta-background-image__btn">
                         <a
-                            className="gm-btn gm-btn_orange"
+                            className="ta-btn ta-btn_orange"
                             href="contact-us/index.html"
                             aria-label="Contact Us"
                         >
