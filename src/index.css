@@ -1796,3 +1796,12 @@ h2, h3, h4 {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+/* Remove bullets from footer lists */
+.ta-footer ul,
+.ta-footer ul li {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
