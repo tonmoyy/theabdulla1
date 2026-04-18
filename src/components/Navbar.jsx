@@ -1,5 +1,6 @@
 // Navbar.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { logoabdulla5 } from "../assets";
 import "swiper/css";
 import { Search, X, ArrowRight, Menu } from "lucide-react";
@@ -38,7 +39,7 @@ const Navbar = () => {
         <div className="outline-style-solid">
             <header className="ta-header">
                 <div className="ta-container-wide">
-                    <a href="/" className="ta-header__logo" aria-label="link to the home page">
+                    <Link to="/" className="ta-header__logo" aria-label="link to the home page">
                         <img
                             width={200}
                             height={100}
@@ -47,27 +48,39 @@ const Navbar = () => {
                             alt="The Abdulla Capital"
                             decoding="async"
                         />
-                    </a>
+                    </Link>
 
                     <div className="ta-header__wrap" role="navigation" aria-label="main navigation">
                         <ul id="menu-header-menu" className="ta-header__menu">
-                            <li className="menu-item"><a href="/" data-title="Home"><span>Home</span></a></li>
-                            <li className="menu-item"><a href="#about-us" data-title="About Us" onClick={scrollToAbout}><span>About Us</span></a></li>
-                            <li className="menu-item"><a href="/platform" data-title="Platform"><span>Platform</span></a></li>
-                            <li className="menu-item"><a href="/investments" data-title="Investments"><span>Investments</span></a></li>
-                            <li className="menu-item"><a href="/partnerships" data-title="Partnerships"><span>Partnerships</span></a></li>
+                            <li className="menu-item">
+                                <Link to="/" data-title="Home"><span>Home</span></Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="#about-us" data-title="About Us" onClick={scrollToAbout}>
+                                    <span>About Us</span>
+                                </Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/platform" data-title="Platform"><span>Platform</span></Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/investments" data-title="Investments"><span>Investments</span></Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="/partnerships" data-title="Partnerships"><span>Partnerships</span></Link>
+                            </li>
                         </ul>
 
                         <div className="ta-header__info">
-                            <a
+                            <Link
                                 className="ta-btn ta-btn_blue ta-btn_min"
-                                href="/contact-us"
+                                to="/contact-us"
                                 aria-label="Contact Us"
                                 style={contactButtonStyle}
                             >
                                 <span>Contact Us</span>
                                 <ArrowRight size={16} />
-                            </a>
+                            </Link>
 
                             <div className="ta-header__search js-search">
                                 <button
@@ -114,22 +127,30 @@ const Navbar = () => {
                 <div className={`ta-mobile-menu ${isOpen ? "open" : "hidden"}`} style={{ display: isOpen ? "block" : "none" }}>
                     <div className="ta-container-wide">
                         <ul className="ta-mobile-header__menu">
-                            <li><a href="#about-us" onClick={scrollToAbout}><span>About Us</span></a></li>
-                            <li><a href="/platform"><span>Platform</span></a></li>
-                            <li><a href="/investments"><span>Investments</span></a></li>
-                            <li><a href="/partnerships"><span>Partnerships</span></a></li>
+                            <li>
+                                <Link to="#about-us" onClick={scrollToAbout}><span>About Us</span></Link>
+                            </li>
+                            <li>
+                                <Link to="/platform"><span>Platform</span></Link>
+                            </li>
+                            <li>
+                                <Link to="/investments"><span>Investments</span></Link>
+                            </li>
+                            <li>
+                                <Link to="/partnerships"><span>Partnerships</span></Link>
+                            </li>
                         </ul>
 
                         <div className="ta-mobile-header__info">
-                            <a
+                            <Link
                                 className="ta-btn ta-btn_blue ta-btn_min"
-                                href="/contact-us"
+                                to="/contact-us"
                                 aria-label="Contact Us"
                                 style={mobileContactButtonStyle}
                             >
                                 <span>Contact Us</span>
                                 <ArrowRight size={14} />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
