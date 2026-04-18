@@ -45,9 +45,13 @@ const CorePillars = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="text-sm md:text-base font-semibold text-blue-600 tracking-wider uppercase">
-                        The Platform
-                    </span>
+                    <div className="inline-flex items-center gap-2 mb-6">
+                        <span className="w-8 h-px bg-stone-500" />
+                                            <span className="text-stone-500 text-xs uppercase tracking-[0.3em] font-medium">
+                                             The Platform
+                                      </span>
+                                  <span className="w-8 h-px bg-stone-500" />
+                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                         A Multi-Disciplinary<br />
                         Capital Platform

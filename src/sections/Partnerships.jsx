@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 const partnerships = [
     {
-        title: "Partner With Us",
+        title: "",
         text: "The Abdulla Capital engages with institutional partners, family offices, and entrepreneurs seeking strategic capital and long-term growth partnerships.",
     }
 ];
@@ -120,10 +120,10 @@ const Partnerships = () => {
                             variants={itemVariants}
                             className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-stone-900 mb-8 tracking-tight"
                         >
-                            Partnerships
+                            Partner With Us
                         </motion.h2>
 
-                        {/* Centered Large Premium Image */}
+                        {/* Centered Large Premium Image – ENLARGED BY ~60% */}
                         <motion.div
                             variants={itemVariants}
                             className="flex justify-center items-center my-12"
@@ -137,7 +137,7 @@ const Partnerships = () => {
                                 whileHover={{ scale: 1.03 }}
                                 transition={{ duration: 0.4, ease: "easeOut" }}
                             >
-                                {/* Decorative Rings */}
+                                {/* Decorative Rings – scaled up proportionally */}
                                 <motion.div
                                     className="absolute -inset-8 border border-stone-200 rounded-full"
                                     initial={{ scale: 0.8, opacity: 0 }}
@@ -163,11 +163,11 @@ const Partnerships = () => {
                                 {/* Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-stone-300/20 to-stone-400/20 rounded-full blur-3xl" />
 
-                                {/* Main Image - Larger Size */}
+                                {/* Main Image – SIGNIFICANTLY LARGER */}
                                 <img
                                     src={partnerships1}
                                     alt="partner-ships"
-                                    className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-contain relative z-10"
+                                    className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[36rem] xl:h-[36rem] object-contain relative z-10"
                                 />
 
                                 {/* Inner Glow Ring */}
@@ -201,32 +201,6 @@ const Partnerships = () => {
                             variants={containerVariants}
                             className="flex flex-col sm:flex-row gap-6 justify-center pt-8"
                         >
-                            {/* Outline Button - Premium */}
-                            <motion.div
-                                variants={buttonVariants}
-                                whileHover="hover"
-                                whileTap="tap"
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                className="w-full sm:w-auto"
-                            >
-                                <button className="group relative px-10 py-4 bg-transparent border border-stone-400 hover:border-stone-600 text-stone-600 hover:text-stone-900 transition-all duration-300 text-sm uppercase tracking-wider font-medium w-full">
-                                    <span className="relative z-10 flex items-center justify-center gap-3">
-                                        Partnership Opportunities
-                                        <svg
-                                            className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </span>
-                                    <span className="absolute bottom-0 left-0 w-0 h-px bg-stone-600 group-hover:w-full transition-all duration-500" />
-                                </button>
-                            </motion.div>
-
                             {/* Solid Button - Premium */}
                             <motion.div
                                 variants={buttonVariants}

@@ -1,10 +1,9 @@
 // src/sections/Homepage.jsx
 import { business1 } from "../assets";
-import About from "./About.jsx";
 import Vision from "./Vision.jsx";
-import Platform from "./Platform.jsx";
+import About from "./About.jsx";
 import CorePillars from "./CorePillars.jsx";
-import Geographic from "./GeographicOutlook.jsx";
+import Leadership from "./Leadership.jsx";
 import Partnerships from "./Partnerships.jsx";
 import Featured from "../components/Featured.jsx";
 
@@ -136,10 +135,9 @@ const Homepage = () => {
 
             {/* Other Sections */}
             <About />
-            <Vision />
-            <Platform />
             <CorePillars />
-            <Geographic />
+            <Vision />
+            <Leadership />
             <Partnerships />
             <Featured />
         </>

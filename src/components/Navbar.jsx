@@ -1,6 +1,6 @@
 // Navbar.jsx
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { logoabdulla5 } from "../assets";
 import "swiper/css";
 import { Search, X, ArrowRight, Menu } from "lucide-react";
@@ -10,17 +10,34 @@ const Navbar = () => {
     const [searchOpen, setSearchOpen] = useState(false);
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const toggleMenu = () => setIsOpen(!isOpen);
     const toggleSearch = () => setSearchOpen(!searchOpen);
     const toggleMobileSearch = () => setMobileSearchOpen(!mobileSearchOpen);
 
     const scrollToAbout = (e) => {
         e.preventDefault();
-        const aboutSection = document.getElementById('about-us');
-        if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
         setIsOpen(false);
+
+        // If we're already on the homepage, just scroll
+        if (location.pathname === "/") {
+            const aboutSection = document.getElementById("about-us");
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+            }
+        } else {
+            // Navigate to home, then scroll after a short delay
+            navigate("/");
+            // Use setTimeout to wait for the component to mount
+            setTimeout(() => {
+                const aboutSection = document.getElementById("about-us");
+                if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 100);
+        }
     };
 
     const contactButtonStyle = {
@@ -56,12 +73,16 @@ const Navbar = () => {
                                 <Link to="/" data-title="Home"><span>Home</span></Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="#about-us" data-title="About Us" onClick={scrollToAbout}>
+                                <Link
+                                    to="/#about-us"
+                                    data-title="About Us"
+                                    onClick={scrollToAbout}
+                                >
                                     <span>About Us</span>
                                 </Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/platform" data-title="Platform"><span>Platform</span></Link>
+                                <Link to="/platform" data-title="Paltform"><span>Paltform</span></Link>
                             </li>
                             <li className="menu-item">
                                 <Link to="/investments" data-title="Investments"><span>Investments</span></Link>
@@ -128,7 +149,9 @@ const Navbar = () => {
                     <div className="ta-container-wide">
                         <ul className="ta-mobile-header__menu">
                             <li>
-                                <Link to="#about-us" onClick={scrollToAbout}><span>About Us</span></Link>
+                                <Link to="/#about-us" onClick={scrollToAbout}>
+                                    <span>About Us</span>
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/platform"><span>Platform</span></Link>
