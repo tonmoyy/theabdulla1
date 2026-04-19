@@ -82,7 +82,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="menu-item">
-                                <Link to="/platform" data-title="Paltform"><span>Paltform</span></Link>
+                                <Link to="/platform" data-title="Platform"><span>Platform</span></Link>
                             </li>
                             <li className="menu-item">
                                 <Link to="/investments" data-title="Investments"><span>Investments</span></Link>
