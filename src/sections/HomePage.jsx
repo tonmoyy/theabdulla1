@@ -21,18 +21,18 @@ const Homepage = () => {
         transform: "translate(0px, 0px)",
     };
 
-    // Modern, sleek typography
+    // 🔁 Font now matches the first JSX – refined serif style
     const heroTitleStyle = {
-        fontFamily: "'Inter', 'Manrope', sans-serif",
-        fontWeight: "400",
-        letterSpacing: "-0.03em",
-        lineHeight: "1.25",
+        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
+        fontWeight: "500",
+        letterSpacing: "-0.02em",
+        lineHeight: "1.2",
         color: "#1a1a1a",
     };
 
     const heroEmphasisStyle = {
-        fontFamily: "'Inter', 'Manrope', sans-serif",
-        fontWeight: "500",
+        fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Times New Roman', serif",
+        fontWeight: "600",
         fontStyle: "italic",
         letterSpacing: "-0.02em",
         color: "#2a2a2a",
@@ -46,7 +46,7 @@ const Homepage = () => {
         color: "#555555",
     };
 
-    // Lighter, more refined line styles
+    // Lighter, more elegant line colors
     const lineStyle1 = {
         width: "100%",
         height: "1px",
@@ -133,10 +133,10 @@ const Homepage = () => {
                 </div>
             </section>
 
-            {/* Other Sections */}
+            {/* Other sections remain exactly as before */}
+            <Vision />
             <About />
             <CorePillars />
-            <Vision />
             <Leadership />
             <Partnerships />
             <Featured />
